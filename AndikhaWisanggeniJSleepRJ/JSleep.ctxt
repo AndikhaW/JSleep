@@ -1,23 +1,8 @@
 #BlueJ class context
 comment0.target=JSleep
 comment1.params=args
-comment1.target=void\ JSleep(java.lang.String[])
-comment10.params=price\ numberOfNight
-comment10.target=int\ getTotalPrice(int,\ int)
+comment1.target=void\ main(java.lang.String[])
 comment2.params=
-comment2.target=int\ getHotteld()
-comment3.params=
-comment3.target=java.lang.String\ getHotelName()
-comment4.params=
-comment4.target=boolean\ isDiscount()
-comment5.params=beforeDiscount\ afterDiscount
-comment5.target=float\ getDiscountPercentage(int,\ int)
-comment6.params=price\ discountPercentage
-comment6.target=int\ getDiscountedPrice(int,\ float)
-comment7.params=discountedPrice\ discountPercentage
-comment7.target=int\ getOriginalPrice(int,\ float)
-comment8.params=
-comment8.target=float\ getAdminFeePercentage()
-comment9.params=price
-comment9.target=int\ getAdminFee(int)
-numComments=11
+comment2.target=Room\ createRoom()
+comment2.text=\r\n\ \ \ \ public\ int\ getHotteld(){\r\n\ \ \ \ \ \ \ \ return\ 0;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ String\ getHotelName(){\r\n\ \ \ \ \ \ \ \ return\ "hotel";\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ boolean\ isDiscount(){\r\n\ \ \ \ \ \ \ \ return\ true;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ float\ getDiscountPercentage(int\ beforeDiscount,\ int\ afterDiscount){\r\n\ \ \ \ \ \ \ \ int\ diskon;\r\n\ \ \ \ \ \ \ \ float\ discountPercentage;\r\n\ \ \ \ \ \ \ \ if\ (beforeDiscount\ <\ afterDiscount){\r\n\ \ \ \ \ \ \ \ \ \ \ \ diskon\ \=\ 0;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else{\r\n\ \ \ \ \ \ \ \ \ \ \ \ diskon\ \=\ beforeDiscount\ -\ afterDiscount;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ discountPercentage\ \=\ (diskon\ /\ beforeDiscount)\ *\ 10;\r\n\ \ \ \ \ \ \ \ return\ discountPercentage;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getDiscountedPrice(int\ price,\ float\ discountPercentage){\r\n\ \ \ \ \ \ \ \ int\ hasil;\r\n\ \ \ \ \ \ \ \ int\ discountPrice;\r\n\ \ \ \ \ \ \ \ if\ (discountPercentage\ >\=\ 100){\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ 0;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else{\r\n\ \ \ \ \ \ \ \ \ \ \ \ hasil\ \=\ price\ *\ ((int)discountPercentage\ /\ 100);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ discountPrice\ \=\ price\ -\ hasil;\r\n\ \ \ \ \ \ \ \ return\ discountPrice;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getOriginalPrice(int\ discountedPrice,\ float\ discountPercentage){\r\n\ \ \ \ \ \ \ \ int\ Hasil;\r\n\ \ \ \ \ \ \ \ Hasil\ \=\ (100\ /\ (int)discountPercentage)\ *\ discountedPrice;\r\n\ \ \ \ \ \ \ \ return\ Hasil;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ float\ getAdminFeePercentage(){\r\n\ \ \ \ \ \ \ \ float\ admin;\r\n\ \ \ \ \ \ \ \ admin\ \=\ 5\ /\ 100;\r\n\ \ \ \ \ \ \ \ return\ admin;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getAdminFee(int\ price){\r\n\ \ \ \ \ \ \ \ int\ adminfee;\r\n\ \ \ \ \ \ \ \ adminfee\ \=\ (5\ /\ 100)\ *\ price;\r\n\ \ \ \ \ \ \ \ return\ adminfee;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getTotalPrice(int\ price,\ int\ numberOfNight){\r\n\ \ \ \ \ \ \ \ int\ Final;\r\n\ \ \ \ \ \ \ \ Final\ \=\ (price\ *\ numberOfNight)\ +\ getAdminFee(price);\r\n\ \ \ \ \ \ \ \ return\ Final;\r\n\ \ \ \ }\r\n
+numComments=3

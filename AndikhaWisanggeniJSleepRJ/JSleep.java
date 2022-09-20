@@ -1,11 +1,18 @@
 package AndikhaWisanggeniJSleepRJ;
 
-
 public class JSleep
 {
-    public void JSleep(String[] args){
+    
+    public void main (String[] args){
+        Room hasil = createRoom();
+        System.out.println(hasil.name);
+        System.out.println(hasil.size);
+        System.out.println(hasil.price.price);
+        System.out.println(hasil.facility);
     }
     
+    
+    /*
     public int getHotteld(){
         return 0;
     }
@@ -66,5 +73,11 @@ public class JSleep
         int Final;
         Final = (price * numberOfNight) + getAdminFee(price);
         return Final;
+    }
+    */
+    public Room createRoom(){
+        Price price = new Price (100000, 5);
+        Room room = new Room ("hotel", 30, price, Facility.AC);
+        return room;
     }
 }
