@@ -1,7 +1,20 @@
 package AndikhaWisanggeniJSleepRJ;
 
-public class Room
+public class Room extends Serializable
 {
+    public int size;
+    public Price price;
+    public Facility facility;
+    public String name;
+    
+    public Room(int id, String name,int size, Price price, Facility facility){
+        super(id);
+        this.name = name;
+        this.size = size;
+        this.price = price;
+        this.facility = facility;
+    }
+    /*
     public int size;
     public String name;
     public Facility facility;
@@ -12,5 +25,5 @@ public class Room
         this.size = size;
         this.facility = facility;
         this.price = price;
-    }
+    }*/
 }

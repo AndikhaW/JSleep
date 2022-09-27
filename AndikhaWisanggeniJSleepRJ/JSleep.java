@@ -3,12 +3,17 @@ package AndikhaWisanggeniJSleepRJ;
 public class JSleep
 {
     
-    public void main (String[] args){
+    public static void main (String[] args){
+        /*
         Room hasil = createRoom();
         System.out.println(hasil.name);
         System.out.println(hasil.size);
         System.out.println(hasil.price.price);
-        System.out.println(hasil.facility);
+        System.out.println(hasil.facility);*/
+        Payment testRoom = new Payment(1, 1, 1, "", 1, "", "");
+        Invoice testInvoice = new Invoice(2, 2, 2, "");
+        System.out.println(testRoom.print());
+        System.out.println(testInvoice.print());
     }
     
     
@@ -74,10 +79,10 @@ public class JSleep
         Final = (price * numberOfNight) + getAdminFee(price);
         return Final;
     }
-    */
+    
     public Room createRoom(){
         Price price = new Price (100000, 5);
         Room room = new Room ("hotel", 30, price, Facility.AC);
         return room;
-    }
+    }*/
 }
