@@ -14,6 +14,10 @@ public class Price
         this.price = price;
         this.discount = discount;
     }
+    
+    public String toString(){
+        return "Price = " + this.price + "\n" + "Discount = " + this.discount + "\n";
+    }
     /*
     public double price;
     public int discount;
