@@ -1,6 +1,6 @@
 package AndikhaWisanggeniJSleepRJ;
 
-public class Voucher extends Serializable
+public class Voucher extends Serializable implements FileParser
 {
     public String name;
     public boolean used;
@@ -17,6 +17,12 @@ public class Voucher extends Serializable
         this.used = used;
         this.minimum = minimum;
         this.cut = cut;
+    }
+    public Object write (){
+        return null;
+    }
+    public boolean read(String string){
+        return false;
     }
     /*
     public Type type;
