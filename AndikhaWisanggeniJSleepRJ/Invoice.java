@@ -1,11 +1,11 @@
 package AndikhaWisanggeniJSleepRJ;
-import java.util.Calendar;
+import java.util.Date;
 
 public class Invoice extends Serializable
 {
     public int buyerId;
     public int renterId;
-    public Calendar time;
+    public Date time;
     
     public enum RoomRating{
         NONE, BAD, NEUTRAL, GOOD
@@ -18,7 +18,7 @@ public class Invoice extends Serializable
     public PaymentStatus status;
     protected Invoice(int id, int buyerId, int renterId){
         super(id);
-        this.time = Calendar.getInstance();
+        this.time = new Date();//Date.getInstance();
         this.buyerId = buyerId;
         this.renterId = renterId;
         this.rating = RoomRating.NONE;
@@ -27,7 +27,7 @@ public class Invoice extends Serializable
     
     public Invoice(int id, Account buyer, Renter renter){
         super(id);
-        this.time = Calendar.getInstance();
+        this.time = new Date();//Calendar.getInstance();
         this.buyerId = buyer.id;
         this.renterId = renter.id;
         this.rating = RoomRating.NONE;

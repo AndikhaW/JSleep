@@ -1,4 +1,6 @@
 package AndikhaWisanggeniJSleepRJ;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Room extends Serializable implements FileParser
 {
@@ -9,6 +11,7 @@ public class Room extends Serializable implements FileParser
     public String address;
     public BedType bedType;
     public City city;
+    public ArrayList<Date> booked;
     
     public Room(int id, String name,int size, Price price, Facility facility, City city, String address){
         super(id);
@@ -18,10 +21,11 @@ public class Room extends Serializable implements FileParser
         this.facility = facility;
         this.city = city;
         this.address = address;
+        this.booked = new ArrayList<Date>();
     }
     
     public String toString(){
-      return "Name      = " + this.name + "\n" + "Size      = " + this.size + "\n" + "Price     = " + this.price + "\n" + "Facility = " + this.facility + "\n" + "City      = " + this.city + "\n" + "Address   = " + this.address + "\n";
+      return "Name      = " + this.name + "\n" + "Size  S    = " + this.size + "\n" + "Price     = " + this.price + "\n" + "Facility = " + this.facility + "\n" + "City      = " + this.city + "\n" + "Address   = " + this.address + "\n";
     }
     
     public Object write (){
