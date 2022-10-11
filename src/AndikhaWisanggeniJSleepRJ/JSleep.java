@@ -2,6 +2,7 @@ package AndikhaWisanggeniJSleepRJ;
 
 //import java.util.Calendar;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class JSleep
 {
@@ -11,7 +12,12 @@ public class JSleep
         return room;
     }
     public static void main (String[] args){
-        System.out.print("Hello from Intellij!");
+        //System.out.print("Hello from Intellij!");
+        ArrayList<Room> RoomSerialized = new ArrayList<Room>();
+        for(int i = 0; i < 5; i++){
+            RoomSerialized.add(i, JSleep.createRoom());
+            System.out.println(RoomSerialized.get(i).toString());
+        }
         /*
         Room RoomA = JSleep.createRoom();
         Room RoomB = JSleep.createRoom();
