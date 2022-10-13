@@ -8,12 +8,12 @@ public class JSleep
 {
     public static Room createRoom(){
         Price price = new Price (100000, 5);
-        Room room = new Room (1, "hotel", 30, price, Facility.AC,City.DEPOK,"Jl. Margonda Raya");
+        Room room = new Room ("hotel", 30, price, Facility.AC,City.DEPOK,"Jl. Margonda Raya");
         return room;
     }
     public static void main (String[] args){
-        //System.out.print("Hello from Intellij!");
-        ArrayList<Room> RoomSerialized = new ArrayList<Room>();
+
+        ArrayList<Room> RoomSerialized = new ArrayList<>();
         for(int i = 0; i < 5; i++){
             RoomSerialized.add(i, JSleep.createRoom());
             System.out.println(RoomSerialized.get(i).toString());

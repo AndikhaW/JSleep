@@ -4,15 +4,17 @@ import java.util.HashMap;
 public class Serializable
 {
     public final int id;
-    private static HashMap<Class<?>, Integer> mapCounter;
-    protected Serializable (int id){
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
+    protected Serializable (){
         Integer counter = mapCounter.get(this.getClass());
-        if (counter == null){
+        if (counter == null) {
             counter = 0;
+        }else {
+            mapCounter.put(this.getClass(), counter + 1);
+            counter++;
         }
-
-        this.id = id;
-        
+        this.id = counter;
+        mapCounter.put(this.getClass(), counter);
     }
     public int compareTo(Serializable serial){
         return this.id - serial.id;
