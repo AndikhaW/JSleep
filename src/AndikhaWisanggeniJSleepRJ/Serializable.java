@@ -1,38 +1,38 @@
 package AndikhaWisanggeniJSleepRJ;
 import java.util.HashMap;
 
-public class Serializable
-{
+public class Serializable {
     public final int id;
-    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
-    protected Serializable (){
-        Integer counter = mapCounter.get(this.getClass());
-        if (counter == null) {
-            counter = 0;
-        }else {
-            mapCounter.put(this.getClass(), counter + 1);
-            counter++;
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();
+
+    protected Serializable() {
+        Integer counter = mapCounter.get(getClass());
+        if (counter == null){
+            counter =  0;
         }
+        else{
+            counter +=1;
+        }
+        mapCounter.put(getClass(), counter);
         this.id = counter;
-        mapCounter.put(this.getClass(), counter);
-    }
-    public int compareTo(Serializable serial){
-        return this.id - serial.id;
-    }
-    public boolean equals(Object object){
-        if(object instanceof Serializable){
-            return this.id == ((Serializable)object).id;
-        }
-        return false;
-    }
-    public boolean equals(Serializable serial) {
-        return this.id == serial.id;
-    }
-    public static <T> Integer getClosingId(Class<T> klas){
-        return mapCounter.get(klas);
     }
 
-    public static <T> Integer setClosingId(Class<T> klas, int id){
-        return mapCounter.replace(klas, id);
+    public static <T extends Serializable> Integer setClosingId(Class<T> clazz, int id) { return mapCounter.put(clazz, id); }
+
+    public static <T extends Serializable> Integer getClosingId(Class<T> clazz) { return mapCounter.get(clazz); }
+
+    public boolean equals(Object other)
+    {
+        return other instanceof Serializable && ((Serializable) other).id == id;
+    }
+
+    public boolean equals(Serializable other)
+    {
+        return other.id == id;
+    }
+
+    public int compareTo(Serializable other)
+    {
+        return Integer.compare(this.id, other.id);
     }
 }

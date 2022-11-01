@@ -1,6 +1,6 @@
 package AndikhaWisanggeniJSleepRJ;
 
-public class Account extends Serializable implements FileParser
+public class Account extends Serializable //implements FileParser
 {
     public String name;
     public String email;

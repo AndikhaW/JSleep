@@ -14,15 +14,29 @@ public class JSleep
 
     public static Room createRoom(){
         Price price = new Price (100000, 5);
-        Room room = new Room ("hotel", 30, price, Facility.AC,City.DEPOK,"Jl. Margonda Raya");
+        Room room = new Room (2, "hotel", 30, price, Facility.AC,City.DEPOK,"Jl. Margonda Raya");
         return room;
     }
-    class Country{
+    /*class Country{
         public String name;
         public int population;
         public List<String> listOfStates;
-    }
+    }*/
     public static void main (String[] args){
+        Renter testRegex = new Renter("Netlab_", "081234567890", "Jl Margonda Raya");
+        Renter tesRegexFail = new Renter("netlab", "081", "Jalan");
+        System.out.println(testRegex.validate());
+        System.out.println(tesRegexFail.validate());
+        try{
+            String filepath = "src\\json\\randomRoomList.json";
+            JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
+            List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
+            filterTableRoom.forEach(room -> System.out.println(room.toString()));
+        }
+        catch(Throwable t){
+            t.printStackTrace();
+        }
+        /*
         String filepath = "C:\\Users\\Andikha Wisanggeni\\OneDrive\\Documents\\Kuliah\\Semester 3\\OOP\\Code Praktikum\\city.json";
         Gson gson = new Gson();
         try{
@@ -36,7 +50,7 @@ public class JSleep
         }
         catch(IOException e){
             e.printStackTrace();
-        }
+        }*/
         /*
         ArrayList<Room> RoomSerialized = new ArrayList<>();
         for(int i = 0; i < 5; i++){
@@ -93,8 +107,20 @@ public class JSleep
         System.out.println(Validate.filter(unfilteredArray, 10000,false));*/
         
     }
-    
-    
+
+    public static List<Room> filterByCity(List<Room> room, String city, int start, int end){
+        return Algorithm.<Room>paginate(room, start, end, i  -> i.city == City.valueOf(city.toUpperCase()));
+    }
+    public static List<Room> filterByPrice(List<Room> room, double price1, double price2){
+        return Algorithm.<Room>collect(room, i -> i.price.price >= price1 && i.price.price <= price2);
+    }
+
+
+    public static List<Room> filterByAccountId(List<Room> room, int accountId, int id1, int id2){
+        return Algorithm.<Room>paginate(room, id1, id2, i  -> i.accountId == accountId);
+    }
+
+
     /*
     public int getHotteld(){
         return 0;
