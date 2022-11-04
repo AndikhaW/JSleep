@@ -15,22 +15,27 @@ public class Renter extends Serializable
         this.address = address;
     }
     public boolean validate(){
-        return this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE);
+        if(this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-    /*public Renter (String username, String address){
-        //super(id);
-        this.username = username;
-        this.address = address;
-    }
-    public Renter (String username, String phoneNumber){
-        //super(id);
-        this.username = username;
-        this.phoneNumber = phoneNumber;
-    }
-    public Renter (String username, String phoneNumber, String address){
-        //super(id);
-        this.username = username;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-    }*/
+//    public Renter (String username, String address){
+//        //super(id);
+//        this.username = username;
+//        this.address = address;
+//    }
+//    public Renter (String username, String phoneNumber){
+//        //super(id);
+//        this.username = username;
+//        this.phoneNumber = phoneNumber;
+//    }
+//    public Renter (String username, String phoneNumber, String address){
+//        //super(id);
+//        this.username = username;
+//        this.phoneNumber = phoneNumber;
+//        this.address = address;
+//    }
 }
