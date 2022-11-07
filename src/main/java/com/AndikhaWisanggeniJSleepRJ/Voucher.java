@@ -1,0 +1,69 @@
+package com.AndikhaWisanggeniJSleepRJ;
+
+public class Voucher extends com.AndikhaWisanggeniJSleepRJ.Serializable //implements FileParser
+{
+    public String name;
+    public boolean used;
+    public int code;
+    public com.AndikhaWisanggeniJSleepRJ.Type type;
+    public double minimum;
+    public double cut;
+    
+    public Voucher (String name, int code, com.AndikhaWisanggeniJSleepRJ.Type type, boolean used, double minimum, double cut){
+        //super(id);
+        this.name = name;
+        this.code = code;
+        this.type = type;
+        this.used = used;
+        this.minimum = minimum;
+        this.cut = cut;
+    }
+    public Object write (){
+        return null;
+    }
+    public boolean read(String string){
+        return false;
+    }
+    /*
+    public Type type;
+    public double cut;
+    public String name;
+    public int code;
+    public double minimum;
+    public boolean used;
+    public Voucher(String name, int code, Type type, double minimum, double cut){
+        this.name = name;
+        this.code = code;
+        this.type = type;
+        this.minimum = minimum;
+        this.cut = cut;
+    }
+    */
+    public boolean canApply(com.AndikhaWisanggeniJSleepRJ.Price price){
+        if(price.price > minimum && used == false){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public double apply(com.AndikhaWisanggeniJSleepRJ.Price price){
+        this.used = true;
+        if(this.type == com.AndikhaWisanggeniJSleepRJ.Type.DISCOUNT){
+            if(this.cut >= 100){
+                return 0;
+            }
+            else{
+                return price.price - (price.price * (this.cut/100));
+            }
+        }else{
+            if(price.price <= this.cut){
+                price.price = this.cut;
+            }
+                return price.price - this.cut;
+        }
+    }
+    public boolean isUsed(){
+        return this.used;
+    }
+}
