@@ -1,7 +1,7 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import java.util.Date;
-
-public class Invoice extends com.AndikhaWisanggeniJSleepRJ.Serializable
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Invoice extends Serializable
 {
     public int buyerId;
     public int renterId;
@@ -25,7 +25,7 @@ public class Invoice extends com.AndikhaWisanggeniJSleepRJ.Serializable
         this.status = PaymentStatus.WAITING;
     }
     
-    public Invoice(com.AndikhaWisanggeniJSleepRJ.Account buyer, com.AndikhaWisanggeniJSleepRJ.Renter renter){
+    public Invoice(Account buyer, Renter renter){
         //super(id);
         this.time = new Date();//Calendar.getInstance();
         this.buyerId = buyer.id;

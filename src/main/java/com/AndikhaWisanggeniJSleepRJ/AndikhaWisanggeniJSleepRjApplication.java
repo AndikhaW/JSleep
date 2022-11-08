@@ -1,5 +1,5 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

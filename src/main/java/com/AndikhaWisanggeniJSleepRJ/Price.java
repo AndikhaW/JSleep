@@ -1,5 +1,5 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 
 public class Price
 {

@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
-public class Account extends com.AndikhaWisanggeniJSleepRJ.Serializable //implements FileParser
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Account extends Serializable //implements FileParser
 {
     public String name;
     public String email;

@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import java.util.ArrayList;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 public class Validate {
     public static ArrayList filter (com.AndikhaWisanggeniJSleepRJ.Price[] list, int value, boolean less){
         ArrayList filteredPrice = new ArrayList();

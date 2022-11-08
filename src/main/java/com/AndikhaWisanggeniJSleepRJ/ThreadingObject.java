@@ -1,5 +1,5 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 public class ThreadingObject extends Thread{
     public ThreadingObject(String name){
         super(name);

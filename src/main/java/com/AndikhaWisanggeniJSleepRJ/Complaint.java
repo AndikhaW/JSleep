@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
-public class Complaint extends com.AndikhaWisanggeniJSleepRJ.Serializable
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Complaint extends Serializable
 {
     public String desc;
     public String date;

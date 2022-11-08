@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
-public class Renter extends com.AndikhaWisanggeniJSleepRJ.Serializable
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Renter extends Serializable
 {
     public String phoneNumber = "";
     public String address = "";

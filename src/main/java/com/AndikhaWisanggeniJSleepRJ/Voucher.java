@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
-public class Voucher extends com.AndikhaWisanggeniJSleepRJ.Serializable //implements FileParser
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Voucher extends Serializable //implements FileParser
 {
     public String name;
     public boolean used;

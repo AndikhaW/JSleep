@@ -1,5 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.JsonDBEngine;
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 //import java.util.Calendar;
 import java.util.List;
 import com.google.gson.*;
@@ -22,23 +23,27 @@ public class JSleep
 //        public List<String> listOfStates;
 //    }*/
     public static void main (String[] args){
+        JsonDBEngine.Run(JSleep.class);
         SpringApplication.run(JSleep.class, args);
-        com.AndikhaWisanggeniJSleepRJ.Renter testRegex = new com.AndikhaWisanggeniJSleepRJ.Renter("Netlab_", "081234567890", "Jl Margonda Raya");
-        com.AndikhaWisanggeniJSleepRJ.Renter tesRegexFail = new com.AndikhaWisanggeniJSleepRJ.Renter("netlab", "081", "Jalan");
-        System.out.println(testRegex.validate());
-        System.out.println(tesRegexFail.validate());
-        try{
-            String filepath = "src\\json\\randomRoomList.json";
-            com.AndikhaWisanggeniJSleepRJ.JsonTable<com.AndikhaWisanggeniJSleepRJ.Account> tableAccount = new com.AndikhaWisanggeniJSleepRJ.JsonTable<>(com.AndikhaWisanggeniJSleepRJ.Account.class, filepath);
-            tableAccount.add(new com.AndikhaWisanggeniJSleepRJ.Account("name", "email", "password"));
-            tableAccount.writeJson();
-        }
-        catch(Throwable t){
-            t.printStackTrace();
-        }
-        for(int i = 0; i < 10; i++){
-            com.AndikhaWisanggeniJSleepRJ.ThreadingObject thread = new com.AndikhaWisanggeniJSleepRJ.ThreadingObject("Thread " + i);
-        }
+        Runtime.getRuntime().addShutdownHook(new Thread(() ->JsonDBEngine.join()));
+
+//        SpringApplication.run(JSleep.class, args);
+//        com.AndikhaWisanggeniJSleepRJ.Renter testRegex = new com.AndikhaWisanggeniJSleepRJ.Renter("Netlab_", "081234567890", "Jl Margonda Raya");
+//        com.AndikhaWisanggeniJSleepRJ.Renter tesRegexFail = new com.AndikhaWisanggeniJSleepRJ.Renter("netlab", "081", "Jalan");
+//        System.out.println(testRegex.validate());
+//        System.out.println(tesRegexFail.validate());
+//        try{
+//            String filepath = "src\\json\\randomRoomList.json";
+//            com.AndikhaWisanggeniJSleepRJ.dbjson.JsonTable<com.AndikhaWisanggeniJSleepRJ.Account> tableAccount = new com.AndikhaWisanggeniJSleepRJ.dbjson.JsonTable<>(com.AndikhaWisanggeniJSleepRJ.Account.class, filepath);
+//            tableAccount.add(new com.AndikhaWisanggeniJSleepRJ.Account("name", "email", "password"));
+//            tableAccount.writeJson();
+//        }
+//        catch(Throwable t){
+//            t.printStackTrace();
+//        }
+//        for(int i = 0; i < 10; i++){
+//            com.AndikhaWisanggeniJSleepRJ.ThreadingObject thread = new com.AndikhaWisanggeniJSleepRJ.ThreadingObject("Thread " + i);
+//        }
 //        /*
 //        String filepath = "C:\\Users\\Andikha Wisanggeni\\OneDrive\\Documents\\Kuliah\\Semester 3\\OOP\\Code Praktikum\\city.json";
 //        Gson gson = new Gson();

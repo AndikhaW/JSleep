@@ -2,6 +2,7 @@ package com.AndikhaWisanggeniJSleepRJ;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 
 public class Payment extends com.AndikhaWisanggeniJSleepRJ.Invoice {
 

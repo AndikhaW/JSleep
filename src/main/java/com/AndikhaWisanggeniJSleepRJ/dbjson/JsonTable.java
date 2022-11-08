@@ -1,4 +1,4 @@
-package com.AndikhaWisanggeniJSleepRJ;
+package com.AndikhaWisanggeniJSleepRJ.dbjson;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

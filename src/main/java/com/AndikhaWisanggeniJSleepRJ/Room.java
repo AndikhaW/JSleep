@@ -1,8 +1,8 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import java.util.ArrayList;
 import java.util.Date;
-
-public class Room extends com.AndikhaWisanggeniJSleepRJ.Serializable //implements FileParser
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+public class Room extends Serializable //implements FileParser
 {
     public int size;
     public com.AndikhaWisanggeniJSleepRJ.Price price;
@@ -15,7 +15,7 @@ public class Room extends com.AndikhaWisanggeniJSleepRJ.Serializable //implement
     public int accountId;
 
     
-    public Room(int accountId, String name, int size, com.AndikhaWisanggeniJSleepRJ.Price price, com.AndikhaWisanggeniJSleepRJ.Facility facility, com.AndikhaWisanggeniJSleepRJ.City city, String address){
+    public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address){
         //super(id);
         this.name = name;
         this.size = size;

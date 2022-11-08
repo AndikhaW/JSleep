@@ -1,6 +1,6 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import java.util.*;
-
+import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 public class Algorithm {
     private Algorithm() {
     }
