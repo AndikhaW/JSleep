@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 @RequestMapping("/account")
 public class AccountController implements BasicGetController<Account>
 {
+    @JsonAutowired(value = Account.class, filepath = "src/main/json/account.json")
     public static final String REGEX_PASSWORD = "^[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z.][a-zA-Z]$";;
     public static JsonTable<Account> accountTable;
     public static final Pattern REGEX_PATTERN_PASSWORD = Pattern.compile(REGEX_PASSWORD);
@@ -28,14 +29,14 @@ public class AccountController implements BasicGetController<Account>
     @GetMapping
     String index() { return "account page"; }
 
-    @PostMapping("/register")
+    //@PostMapping("/register")
 
     @Override
     public JsonTable<Account> getJsonTable() {
-        return null;
+        return accountTable;
     }
 
-    //@PostMapping("/registerRenter")
+    @PostMapping("/{id}/registerRenter")
     Renter registerRenter(
             @PathVariable int id,
             @RequestParam String username,
@@ -49,7 +50,7 @@ public class AccountController implements BasicGetController<Account>
         }
         return null;
     }
-    //@PostMapping("/TopUp")
+    @PostMapping("/{id}/TopUp")
     Boolean topUp(
             @PathVariable int id,
             @RequestParam double balance
@@ -63,7 +64,7 @@ public class AccountController implements BasicGetController<Account>
         return false;
         //return true;
     }
-    //@PostMapping("/register")
+    @PostMapping("/register")
     Account register(
             @RequestParam String name,
             @RequestParam String email,

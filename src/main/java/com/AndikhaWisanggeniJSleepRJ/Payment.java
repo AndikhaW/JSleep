@@ -26,6 +26,8 @@ public class Payment extends com.AndikhaWisanggeniJSleepRJ.Invoice {
         this.to = to;
     }
 
+
+
     public int getRoomId() {
         return roomId;
     }
@@ -60,11 +62,11 @@ public class Payment extends com.AndikhaWisanggeniJSleepRJ.Invoice {
         return true;
     }
 
-    public String getTime(){
-        SimpleDateFormat SDFormat = new SimpleDateFormat("'Formatted Date' = dd MMMM yyyy");
-        String currTime = SDFormat.format(time.getTime());
-        return currTime;
-    }
+//    public String getTime(){
+//        SimpleDateFormat SDFormat = new SimpleDateFormat("'Formatted Date' = dd MMMM yyyy");
+//        String currTime = SDFormat.format(time.getTime());
+//        return currTime;
+//    }
 
     @Override
     public String print(){

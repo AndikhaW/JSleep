@@ -39,7 +39,7 @@ public class Voucher extends Serializable //implements FileParser
         this.cut = cut;
     }
     */
-    public boolean canApply(com.AndikhaWisanggeniJSleepRJ.Price price){
+    public boolean canApply(Price price){
         if(price.price > minimum && used == false){
             return true;
         }else{
