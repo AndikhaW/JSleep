@@ -15,7 +15,7 @@ public class Invoice extends Serializable
         NONE, BAD, NEUTRAL, GOOD
     }
     public enum PaymentStatus{
-        FAILED, WAITING, ACCEPTED, PENDING, SUCCESS
+        FAILED, WAITING, SUCCESS
     }
     
     public RoomRating rating;

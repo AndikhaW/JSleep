@@ -12,7 +12,7 @@ public class Payment extends com.AndikhaWisanggeniJSleepRJ.Invoice {
 
 
 
-    public Payment(int buyerId, int renterId, int roomId, Date from, Date to) {
+    public Payment(int buyerId, int renterId, int roomId ) {
         super(buyerId, renterId);
         this.roomId = roomId;
         this.from = from;

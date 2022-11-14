@@ -5,6 +5,8 @@ public class Account extends Serializable //implements FileParser
     public String name;
     public String email;
     public String password;
+    public double balance;
+    public Renter renter;
     //REGEX_EMAIL = local@domain
     //REGEX_EMAIL = local only alphabet and number, no special character, no whitespace
     //REGEX_EMAIL = domain only alphabet, no number, no gmail, no yahoo, no whitespace, the end of domain must be .
