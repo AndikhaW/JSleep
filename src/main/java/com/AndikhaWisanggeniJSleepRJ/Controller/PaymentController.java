@@ -14,7 +14,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/payment")
 public class PaymentController implements BasicGetController<Payment> {
-    @JsonAutowired(value= Payment.class,filepath = "src/main/json/account.json")
+    @JsonAutowired(value= Payment.class,filepath = "src/main/java/com/json/payment.json")
     public static JsonTable<Payment> paymentTable;
     @PostMapping("/create")
     public Payment create(

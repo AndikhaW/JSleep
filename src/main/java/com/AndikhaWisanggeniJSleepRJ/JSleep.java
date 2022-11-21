@@ -1,20 +1,23 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import com.AndikhaWisanggeniJSleepRJ.dbjson.JsonDBEngine;
-import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+//import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
 //import java.util.Calendar;
 import java.util.List;
 import com.google.gson.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RestController;
+import java.lang.*;
 
 @SpringBootApplication
+//@RestController
 
 public class JSleep
 {
 
-    public static com.AndikhaWisanggeniJSleepRJ.Room createRoom(){
-        com.AndikhaWisanggeniJSleepRJ.Price price = new com.AndikhaWisanggeniJSleepRJ.Price(100000, 5);
-        com.AndikhaWisanggeniJSleepRJ.Room room = new com.AndikhaWisanggeniJSleepRJ.Room(2, "hotel", 30, price, com.AndikhaWisanggeniJSleepRJ.Facility.AC, com.AndikhaWisanggeniJSleepRJ.City.DEPOK,"Jl. Margonda Raya");
+    public static Room createRoom(){
+        Price price = new Price(100000, 5);
+        Room room = new Room(2, "hotel", 30, price, Facility.AC, City.DEPOK,"Jl. Margonda Raya");
         return room;
     }
 //    /*class Country{
@@ -22,11 +25,12 @@ public class JSleep
 //        public int population;
 //        public List<String> listOfStates;
 //    }*/
-    public static void main (String[] args){
+
+    public static void main (String[] args) {
         JsonDBEngine.Run(JSleep.class);
         SpringApplication.run(JSleep.class, args);
-        Runtime.getRuntime().addShutdownHook(new Thread(() ->JsonDBEngine.join()));
-
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
+    }
 //        SpringApplication.run(JSleep.class, args);
 //        com.AndikhaWisanggeniJSleepRJ.Renter testRegex = new com.AndikhaWisanggeniJSleepRJ.Renter("Netlab_", "081234567890", "Jl Margonda Raya");
 //        com.AndikhaWisanggeniJSleepRJ.Renter tesRegexFail = new com.AndikhaWisanggeniJSleepRJ.Renter("netlab", "081", "Jalan");
@@ -114,18 +118,18 @@ public class JSleep
 //        System.out.println("Above 10000.0");
 //        System.out.println(Validate.filter(unfilteredArray, 10000,false));*/
         
-    }
-
-    public static List<com.AndikhaWisanggeniJSleepRJ.Room> filterByCity(List<com.AndikhaWisanggeniJSleepRJ.Room> room, String city, int start, int end){
-        return com.AndikhaWisanggeniJSleepRJ.Algorithm.<com.AndikhaWisanggeniJSleepRJ.Room>paginate(room, start, end, i  -> i.city.toString().toLowerCase().contains(city.toLowerCase()));
-    }
-    public static List<com.AndikhaWisanggeniJSleepRJ.Room> filterByPrice(List<com.AndikhaWisanggeniJSleepRJ.Room> room, double price1, double price2){
-        return com.AndikhaWisanggeniJSleepRJ.Algorithm.<com.AndikhaWisanggeniJSleepRJ.Room>collect(room, i -> i.price.price >= price1 && i.price.price <= price2);
-    }
 
 
-    public static List<com.AndikhaWisanggeniJSleepRJ.Room> filterByAccountId(List<com.AndikhaWisanggeniJSleepRJ.Room> room, int accountId, int id1, int id2){
-        return com.AndikhaWisanggeniJSleepRJ.Algorithm.<com.AndikhaWisanggeniJSleepRJ.Room>paginate(room, id1, id2, i  -> i.accountId == accountId);
+    public static List<Room> filterByCity(List<Room> room, String city, int start, int end){
+        return Algorithm.<Room>paginate(room, start, end, i  -> i.city.toString().toLowerCase().contains(city.toLowerCase()));
+    }
+    public static List<Room> filterByPrice(List<Room> room, double price1, double price2){
+        return Algorithm.<Room>collect(room, i -> i.price.price >= price1 && i.price.price <= price2);
+    }
+
+
+    public static List<Room> filterByAccountId(List<Room> room, int accountId, int id1, int id2){
+        return Algorithm.<Room>paginate(room, id1, id2, i  -> i.accountId == accountId);
     }
 
 

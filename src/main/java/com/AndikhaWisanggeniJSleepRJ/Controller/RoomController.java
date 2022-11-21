@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequestMapping("/room")
 public class RoomController implements BasicGetController<Room>{
-    @JsonAutowired(value= Room.class,filepath = "src/main/json/room.json")
+    @JsonAutowired(value= Room.class,filepath = "src\\main\\json\\room.json")
 
     public static JsonTable<Room> roomTable;
 
@@ -23,8 +23,14 @@ public class RoomController implements BasicGetController<Room>{
             @RequestParam City city,
             @RequestParam String address
     ){
-        Price price1 = new Price(price);
-        return new Room(accountId, name, size, price1, facility, city, address);
+        Account account = Algorithm.<Account>find(AccountController.accountTable, pred -> pred.id == accountId && pred.renter != null);
+        if(account == null){
+            return null;
+        }
+        Room room = new Room(accountId, name, size, new Price(price), facility, city, address);
+        roomTable.add(room);
+        return room;
+
     }
 
     @GetMapping("/{id}/renter")
