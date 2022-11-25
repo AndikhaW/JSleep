@@ -6,7 +6,7 @@ public class Room extends Serializable //implements FileParser
 {
     public int size;
     public com.AndikhaWisanggeniJSleepRJ.Price price;
-    public com.AndikhaWisanggeniJSleepRJ.Facility facility;
+    public ArrayList<Facility> facility = new ArrayList<>();
     public String name;
     public String address;
     public com.AndikhaWisanggeniJSleepRJ.BedType bedType;
@@ -15,16 +15,17 @@ public class Room extends Serializable //implements FileParser
     public int accountId;
 
     
-    public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address){
+    public Room(int accountId, String name, int size, Price price, ArrayList<Facility> facility, City city, String address, BedType bedType){
         //super(id);
         this.name = name;
         this.size = size;
         this.price = price;
-        this.facility = facility;
+        this.facility.addAll(facility);
         this.city = city;
         this.address = address;
         this.booked = new ArrayList<Date>();
         this.accountId = accountId;
+        this.bedType = bedType;
     }
     
     public String toString(){

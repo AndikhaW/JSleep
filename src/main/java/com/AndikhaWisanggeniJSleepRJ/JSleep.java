@@ -15,11 +15,11 @@ import java.lang.*;
 public class JSleep
 {
 
-    public static Room createRoom(){
-        Price price = new Price(100000, 5);
-        Room room = new Room(2, "hotel", 30, price, Facility.AC, City.DEPOK,"Jl. Margonda Raya");
-        return room;
-    }
+//    public static Room createRoom(){
+//        Price price = new Price(100000, 5);
+//        Room room = new Room(2, "hotel", 30, price, Facility.AC, City.DEPOK,"Jl. Margonda Raya");
+//        return room;
+//    }
 //    /*class Country{
 //        public String name;
 //        public int population;
