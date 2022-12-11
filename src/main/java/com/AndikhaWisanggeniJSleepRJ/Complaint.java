@@ -1,5 +1,14 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+
+
+/**
+ * The FileParser interface defines a set of methods for writing and reading objects.
+ *
+ * @author AndikhaWisanggeni
+ * @see Serializable
+ */
+
 public class Complaint extends Serializable
 {
     public String desc;

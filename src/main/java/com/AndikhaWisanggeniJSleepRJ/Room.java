@@ -14,7 +14,18 @@ public class Room extends Serializable //implements FileParser
     public ArrayList<Date> booked;
     public int accountId;
 
-    
+    /**
+     * This is the constructor for the Room class.
+     *
+     * @param accountId the ID of the account that owns the room
+     * @param name the name of the room
+     * @param size the size of the room
+     * @param price the price of the room
+     * @param facility the list of facilities available in the room
+     * @param city the city where the room is located
+     * @param address the address of the room
+     * @param bedType the bed type of the room
+     */
     public Room(int accountId, String name, int size, Price price, ArrayList<Facility> facility, City city, String address, BedType bedType){
         //super(id);
         this.name = name;
@@ -32,10 +43,5 @@ public class Room extends Serializable //implements FileParser
       return "Name      = " + this.name + "\n" + "Size    = " + this.size + "\n" + "Price     = " + this.price + "\n" + "Facility = " + this.facility + "\n" + "City      = " + this.city + "\n" + "Address   = " + this.address + "\n" + "id =" + this.accountId + "\n";
     }
     
-//    public Object write (){
-//        return null;
-//    }
-//    public boolean read(String string){
-//        return false;
-//    }
+
 }

@@ -1,9 +1,25 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import java.util.*;
 import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+
+/**
+ * @author Andikha Wisanggeni
+ * @version 0.1
+ * @since 2017-04-26
+ *
+ */
+
+/**
+ * This class is used to store the data of the hotel room
+ * @author Andikha Wisanggeni
+ * @version 0.1
+ * @since 2017-04-26
+ */
 public class Algorithm {
+
     private Algorithm() {
     }
+
 
     public static <T> int count(T[] array, T value) {
         final Iterator<T> it = Arrays.stream(array).iterator();
@@ -37,6 +53,7 @@ public class Algorithm {
                 ++count;
         return count;
     }
+
 
     public static <T> T find(T[] array, T value) {
         final Iterator<T> it = Arrays.stream(array).iterator();
@@ -105,6 +122,7 @@ public class Algorithm {
         }
         return false;
     }
+
 
     public static <T> List<T> collect(T[] array, T value) {
         final Iterator<T> it = Arrays.stream(array).iterator();

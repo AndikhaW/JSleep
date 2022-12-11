@@ -1,5 +1,8 @@
 package com.AndikhaWisanggeniJSleepRJ;
 import com.AndikhaWisanggeniJSleepRJ.dbjson.Serializable;
+/**
+ * This class represents a Rating, which contains information about the total and count of ratings.
+ */
 public class Rating
 {
     private long total;
@@ -22,7 +25,12 @@ public class Rating
     public long getTotal(){
         return this.total;
     }
-    
+
+    /**
+     * Returns a string representation of this Rating.
+     *
+     * @return a string representation of this Rating
+     */
     public double getAverage(){
         this.count = count;
         this.total = total;

@@ -1,6 +1,17 @@
 package com.AndikhaWisanggeniJSleepRJ.dbjson;
 import java.util.HashMap;
 
+/**
+ * Class representing a voucher that can be used to apply discounts or rebates to prices.
+ *
+ * This class extends the {@link Serializable} class and implements the  interface.
+ * It has fields for the voucher name, code, type, minimum amount, and discount or rebate amount.
+ * It also has methods for checking whether the voucher can be applied to a given price, applying the
+ * voucher to a price, and checking if the voucher has been used.
+ *
+ * @author Andikha Wisanggeni
+ * @version 1.0
+ */
 public class Serializable implements Comparable<Serializable>{
     public final int id;
     private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();

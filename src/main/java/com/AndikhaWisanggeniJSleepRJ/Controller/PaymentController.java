@@ -10,12 +10,29 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * The `PaymentController` class is a RESTful web service controller that provides endpoints
+ * for creating, updating, and retrieving payment information.
+ *
+ * @author AndikhaWisanggeni
+ * @version 1.0
+ * @since 1.0
+ */
 
 @RestController
 @RequestMapping("/payment")
 public class PaymentController implements BasicGetController<Payment> {
+    /**
+     * The `paymentTable` field is a static field that stores the payment table.
+     */
     @JsonAutowired(value= Payment.class,filepath = "src/main/java/com/json/payment.json")
     public static JsonTable<Payment> paymentTable;
+
+    /**
+     * The `getJsonTable` method is a getter for the `paymentTable` field.
+     *
+     * @return The `paymentTable` field.
+     */
     @PostMapping("/create")
     public Payment create(
             @RequestParam int buyerId,
@@ -34,6 +51,7 @@ public class PaymentController implements BasicGetController<Payment> {
 
         int duration = toDate.getDate() - fromDate.getDate();
         double balance = room.price.price * duration;
+
 
         if (buyer != null && room != null) {
             if (buyer.balance >= room.price.price && Payment.availability(fromDate, toDate, room)) {
@@ -57,6 +75,12 @@ public class PaymentController implements BasicGetController<Payment> {
     public JsonTable<Payment> getJsonTable(){
         return paymentTable;
     }
+
+    /**
+     * The `update` method is a method that updates the payment information.
+     *
+     * @param id The id of the payment to be updated.
+     */
     @PostMapping("/{id}/accept")
     public boolean accept(int id){
         Payment payment = Algorithm.<Payment>find(paymentTable, pred -> pred.id == id);
@@ -70,6 +94,12 @@ public class PaymentController implements BasicGetController<Payment> {
         return false;
        // return true;
     }
+
+    /**
+     * The `update` method is a method that updates the payment information.
+     *
+     * @param id The id of the payment to be updated.
+     */
     @PostMapping("/{id}/cancel")
     public boolean cancel(@PathVariable int id){
         Payment payment = Algorithm.<Payment>find(paymentTable, pred -> pred.id == id);
